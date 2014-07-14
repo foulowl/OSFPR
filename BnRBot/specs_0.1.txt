@@ -1,0 +1,39 @@
+Specs for BnRBot v0.1
+----
+Storage:
+* Two hoppers, one for beans, one for rice.
+* Hoppers should be 3d printable. As an option, have the possibility of non-3d printed hoppers. 
+* Hoppers should be able to store 50 cups of rice, 50 cups of beans. 
+* Hoppers should be able to dispense in 1/4 cup increments. Accuracy +/- 1/8 cup.  
+* Hoppers should be air tight, at least on the top, to help prevent spoilage.
+* Hoppers should dispense contents via 3d printable auger screw. It is possible there could be spoilage due to air gaps, experimentation will be needed.
+* For water, we have two options. 1. Hooks up to water line. Preferable but potentially more difficult. 2. Storage tank, something like a camping jug. 
+
+Cooking:
+* Rice cooker and one hot plate/burner. 
+* Temperature control
+* Should be capable of controlling the temperature automatically.
+* Pot and rice cooker will both have lids.
+* Rice cooker does not need stirring. 
+* Assuming beans will not need stirring. If they do, we can use magnetic stirrer. 
+
+Meal capacity:
+* Should be able to prepare rice equal to capacity of rice cooker. 
+* Capacity of beans will have to be determined based on what sort of pot is used. 
+* When preparing a meal, you specify how many 1/4 cups of dry rice and dry beans you want. Should be trivial for control software to specify servings, and have that convert to 1/4 cups.
+
+Control:
+* Whole thing should be controlled via raspberry pi + Arduino. 
+* Burner/rice cooker should turn on independently, so that both beans and rice are done at the same time. 
+* Control via bash script from workstation or phone. 
+
+Output:
+* Process is completed when beans and rice are fully cooked. Determined by software timers. 
+* When process is completed, have the option of getting an email, alert, etc. 
+* Generates nutrition facts for the total output.
+* v0.1 does not scoop beans and rice onto plate, but potentially an option for future versions. 
+
+Cleaning:
+* Hoppers will most likely need to be cleaned periodically by hand. 
+* Rice cooker and pot will need to be cleaned by hand after each use. 
+* Possibility of self cleaning version in the future, as we already have a water line hooked up. 
