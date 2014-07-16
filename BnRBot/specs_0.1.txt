@@ -13,9 +13,11 @@ Cooking:
 * Rice cooker and one hot plate/burner. 
 * Temperature control
 * Should be capable of controlling the temperature automatically.
-* Pot and rice cooker will both have lids.
+* Pot and rice cooker will both have lids. We need a way to remove and replace the lids, that doesn't get in the way of removing the pot for easy access to contents.
 * Rice cooker does not need stirring. 
 * Assuming beans will not need stirring. If they do, we can use magnetic stirrer. 
+* Ability to configure the water / dry contents ratio for both beans and rice, allowing for both white and brown rice, etc.
+* This might be a better feature for 0.2, but the ability to wash the rice and the ability to soak the beans. Perhaps the dry product can get dispensed into a spouted container first, along with water.
 
 Meal capacity:
 * Should be able to prepare rice equal to capacity of rice cooker. 
