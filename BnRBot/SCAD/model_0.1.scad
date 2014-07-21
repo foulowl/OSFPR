@@ -19,20 +19,40 @@ burner_base_width=200;
 burner_base_depth=200;
 burner_base_height=20;
 
+rice_cooker_diameter=200;
+rice_cooker_height=100;
+
+arm_rod_diameter=8;
+rod_spacing=30;
+arm_width=1000;
+
+drain_diameter=50;
+drain_height=100;
+
 beans_pot_diameter=200;
+
+front_component_distance=0;
+arm_distance=250;
+rear_component_distance=300;
 
 //colors
 output_tube_color=([1.0, 0.5, 1.0]);
 burner_color=([1.0, 0.5, 0.5]);
 motor_color=([1.0, 1.0, 1.0]);
+rice_cooker_color=([1.0, 0.6, 0.6]);
+drain_color=([0.2, 1.0, 0.2]);
+arm_color=([0.2, 0.7, 0.7]);
 
+////
+//Rear components
+////
 
 //hopper
 
 
 //output tube
 color(output_tube_color)
-translate([0, 0, 300])
+translate([0, rear_component_distance, 300])
 rotate([90, 0, 0]) 
 {
 	difference()
@@ -44,18 +64,45 @@ rotate([90, 0, 0])
 
 //motor
 color([0.5, 0.5, 1.0])
-translate([0, output_tube_length/2+motor_height/2, 300])
+translate([0, output_tube_length/2+motor_height/2+rear_component_distance, 300])
 rotate([90, 0, 0])
 cylinder(r=motor_diameter/2, h=motor_height, center=true);
 
-//burner
-color([1.0, 0.2, 0.2])
-translate([0, -30, 0])
+////
+//Arm components
+////
+color(arm_color)
+rotate([0, 90, 0])
 {
- cube([200, 200, 10], center=true);
- translate([0, 0, 15])
- cylinder(r=100, h=20, center=true);
+	//arm rod 1
+	translate([0, arm_distance, 0])
+	cylinder(r=arm_rod_diameter/2, h=arm_width, center=true);
+	translate([0, arm_distance+rod_spacing, 0])
+	cylinder(r=arm_rod_diameter/2, h=arm_width, center=true);
+}
+
+////
+//Front components
+////
+
+//burner
+color(burner_color)
+translate([-200, front_component_distance, 0])
+{
+	cube([200, 200, 10], center=true);
+	translate([0, 0, 15])
+	cylinder(r=100, h=20, center=true);
 }
 
 //rice cooker
+color(rice_cooker_color)
+translate([200, front_component_distance, 0])
+{
+ cylinder(r=rice_cooker_diameter/2, h=rice_cooker_height);
+}
 
+//drain
+color(drain_color)
+{
+	cylinder(r=drain_diameter, h=drain_height);
+}
